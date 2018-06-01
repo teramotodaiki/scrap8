@@ -1,5 +1,6 @@
 # scrap8
 Eight からエクスポートした CSV を Scrapbox にインポートできる JSON に変換します
+ビジネス用途で使う場合は Scrapbox に課金しましょう (ステマじゃないです)
 
 ## Requirements
 - 実行には Node.js と npm が必要
