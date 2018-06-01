@@ -1,10 +1,12 @@
 {
-  "name": "eight-to-scrapbox",
-  "version": "1.0.0",
+  "name": "scrap8",
+  "version": "0.0.1",
   "description": "Convert CSV to JSON",
-  "main": "index.js",
+  "main": "scrap8.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "babel src -d lib",
+    "watch": "mocha --require babel-register --watch",
+    "test": "mocha --require babel-register"
   },
   "keywords": [
     "eight",
@@ -13,5 +15,17 @@
     "csv"
   ],
   "author": "teramotodaiki",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "commander": "^2.15.1",
+    "lodash": "^4.17.10"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-register": "^6.26.0",
+    "chai": "^4.1.2",
+    "mocha": "^5.2.0",
+    "prettier": "^1.13.3"
+  }
 }
