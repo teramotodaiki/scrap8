@@ -31,7 +31,6 @@ const csvScheme = [
 let unknownUserIndex = 0;
 
 export default function parse(csvText) {
-  console.log(csvText);
   return csvText
     .split("\n")
     .slice(offsetRow)
