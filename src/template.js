@@ -1,4 +1,4 @@
-const monthLink = yyyymmdd =>
+const monthLink = (yyyymmdd = "0000/00/00") =>
   `[${yyyymmdd.substr(0, 7)}]/${yyyymmdd.substr(-2)}`;
 const common = (person, column) =>
   !person[column]
