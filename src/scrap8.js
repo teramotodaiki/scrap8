@@ -1,9 +1,7 @@
 #!/usr/bin/env node
-import path from "path";
 import fs from "fs";
 import program from "commander";
-import flatten from "lodash/flatten";
-import parse from "./parse";
+import main from "./main";
 
 program
   .version("0.0.1")
@@ -13,22 +11,19 @@ program
     "Use javascript template exporting default function without .js"
   )
   .option("-o, --out [out]", "Convert all input files into a single file")
+  .option("--no-debug", "Disable debug log")
   .parse(process.argv);
 
-main();
+const json = JSON.stringify(
+  main({
+    args: program.args,
+    template: program.template,
+    debug: program.debug
+  })
+);
 
-function main() {
-  const csvFiles = program.args
-    .map(relativePath => path.resolve(relativePath))
-    .map(absolutePath => fs.readFileSync(absolutePath, { encoding: "utf8" }));
-  console.log(`${csvFiles.length} files are loaded!`);
-  const persons = flatten(csvFiles.map(parse));
-  console.log(`${persons.length} people were converted!`);
-
-  const userTemplate = program.template && path.resolve(program.template);
-  const templateFunc = require(userTemplate || "./template").default;
-
-  const pages = persons.map(templateFunc);
-  const json = JSON.stringify({ pages });
-  fs.writeFileSync(path.resolve(program.out || "./export.json"), json);
+if (program.out) {
+  fs.writeFileSync(path.resolve(program.out), json);
+} else {
+  process.stdout.write(json);
 }

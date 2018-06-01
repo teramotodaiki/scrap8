@@ -2,7 +2,10 @@
   "name": "scrap8",
   "version": "0.0.1",
   "description": "Convert CSV to JSON",
-  "main": "scrap8.js",
+  "main": "src/main.js",
+  "bin": {
+    "scrap8": "lib/scrap8.js"
+  },
   "scripts": {
     "build": "babel src -d lib",
     "watch": "mocha --require babel-register --watch",
