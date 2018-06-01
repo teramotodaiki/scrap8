@@ -10,7 +10,7 @@
     "build": "babel src -d lib",
     "watch": "mocha --require babel-register --watch",
     "prettier": "prettier --write '**/*.js'",
-    "prepublish": "npm test && npm prettier && npm build",
+    "prepublish": "npm test && npm run prettier && npm run build",
     "test": "mocha --require babel-register"
   },
   "keywords": [
