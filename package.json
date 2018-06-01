@@ -21,6 +21,14 @@
   ],
   "author": "teramotodaiki",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/teramotodaiki/scrap8.git"
+  },
+  "bugs": {
+    "url": "https://github.com/teramotodaiki/scrap8/issues",
+    "email": "i101323@gmail.com"
+  },
   "dependencies": {
     "commander": "^2.15.1",
     "csv-parse": "^2.4.0",
