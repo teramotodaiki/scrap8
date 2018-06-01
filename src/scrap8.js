@@ -3,6 +3,7 @@ import path from "path";
 import fs from "fs";
 import program from "commander";
 import flatten from "lodash/flatten";
+import parse from "./parse";
 
 program
   .version("0.0.1")
@@ -27,7 +28,7 @@ function main() {
   const userTemplate = program.template && path.resolve(program.template);
   const templateFunc = require(userTemplate || "./template").default;
 
-  const pages = persons.map(template);
+  const pages = persons.map(templateFunc);
   const json = JSON.stringify({ pages });
   fs.writeFileSync(path.resolve(program.out || "./export.json"), json);
 }
