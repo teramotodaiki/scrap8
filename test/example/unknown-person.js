@@ -1,5 +1,4 @@
-export const row =
-  "hoge\t\t\t? ?\thoge.info@gmail.com\t\t\t\t\t\t\t\thttp://www.hoge.info\t2015/04/29\t\t\t1";
+export const row = `hoge,"","",? ?,hoge.info@gmail.com,"","","","","","","",http://www.hoge.info,2015/04/29,"","",1`;
 
 export const person = {
   "'?'を含んだデータ": "1",

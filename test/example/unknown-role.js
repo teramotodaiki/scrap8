@@ -1,5 +1,4 @@
-export const row =
-  "ほげええええ株式会社\t\t?\tほげほげ\thogehohogehge@example.com\t0000001\t東京都渋谷区ホゲホゲホゲホゲホゲホゲホゲホゲホゲhビル\t\t\t\t\t\t\t2015/12/14\t1\t\t1";
+export const row = `ほげええええ株式会社,"",?,ほげほげ,hogehohogehge@example.com,0000001,東京都渋谷区ホゲホゲホゲホゲホゲホゲホゲホゲホゲhビル,"","","","","","",2015/12/14,1,"",1`;
 
 export const person = {
   "'?'を含んだデータ": "1",

@@ -1,9 +1,11 @@
 import fromPairs from "lodash/fromPairs";
 import zipObject from "lodash/zipObject";
 import mapValues from "lodash/mapValues";
+import csvParse from "csv-parse/lib/sync";
 
 /**
  * CSV データの行頭に書かれている注意書きなどの行数
+ * delimiter つけずに直接文章書き込んでる. ヤバい
  */
 const offsetRow = 8;
 /**
@@ -31,6 +33,7 @@ const csvScheme = [
 let unknownUserIndex = 0;
 
 export default function parse(csvText) {
+  // TODO: Stream
   return csvText
     .split("\n")
     .slice(offsetRow)
@@ -48,7 +51,7 @@ export default function parse(csvText) {
  * @returns {Object} { "column": "value" }
  */
 export function toJSON(csvRow) {
-  const row = csvRow.split("\t");
+  const row = csvParse(csvRow)[0];
   let hash = zipObject(csvScheme, row);
 
   if (!hash[`氏名`] || hash[`氏名`].includes("?")) {

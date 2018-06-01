@@ -1,5 +1,4 @@
-export const row =
-  "HackforPlay, Inc.\tDebusho\tCEO\tDaiki Teramoto\tdteramoto@example.com\t000-0000\tKanazawa Ishikawa\t000-0000-0000\t000-0000-0001\t000-0000-0002\t000-0000-0003\t000-0000-0004\thttp://hackforplay.xyz\t2018/06/01\t1\t\t";
+export const row = `"HackforPlay, Inc.",Debusho,CEO,Daiki Teramoto,dteramoto@example.com,000-0000,Kanazawa Ishikawa,000-0000-0000,000-0000-0001,000-0000-0002,000-0000-0003,000-0000-0004,http://hackforplay.xyz,2018/06/01,1,"",`;
 export const person = {
   会社名: "HackforPlay, Inc.",
   部署名: "Debusho",
