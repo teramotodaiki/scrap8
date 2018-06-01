@@ -50,7 +50,7 @@ Daiki Teramoto
  http://twitter.com/teramotodaiki
  役職: [CEO]
  郵便番号: 920-0856
- 住所: 石川県金沢市?町?町? #文字が認識できなかった人
+ 住所: 石川県金沢市?町 #文字が認識できなかった人
 
 
 [* 連絡先]
@@ -62,3 +62,9 @@ Daiki Teramoto
 #Eightでつながっている人
 
 ```
+
+
+# CHANGELOG
+
+## 0.0.1
+- CLI and API
