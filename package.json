@@ -9,6 +9,8 @@
   "scripts": {
     "build": "babel src -d lib",
     "watch": "mocha --require babel-register --watch",
+    "prettier": "prettier --write '**/*.js'",
+    "prepublish": "npm test && npm prettier && npm build",
     "test": "mocha --require babel-register"
   },
   "keywords": [

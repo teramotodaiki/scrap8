@@ -1,7 +1,7 @@
-import fromPairs from "lodash/fromPairs";
-import zipObject from "lodash/zipObject";
-import mapValues from "lodash/mapValues";
-import csvParse from "csv-parse/lib/sync";
+import fromPairs from 'lodash/fromPairs';
+import zipObject from 'lodash/zipObject';
+import mapValues from 'lodash/mapValues';
+import csvParse from 'csv-parse/lib/sync';
 
 /**
  * CSV データの行頭に書かれている注意書きなどの行数
@@ -35,7 +35,7 @@ let unknownUserIndex = 0;
 export default function parse(csvText) {
   // TODO: Stream
   return csvText
-    .split("\n")
+    .split('\n')
     .slice(offsetRow)
     .map(toJSON);
 }
@@ -54,8 +54,8 @@ export function toJSON(csvRow) {
   const row = csvParse(csvRow)[0];
   let hash = zipObject(csvScheme, row);
 
-  if (!hash[`氏名`] || hash[`氏名`].includes("?")) {
-    const num = (++unknownUserIndex + "").padStart(4, "0"); // like 0001
+  if (!hash[`氏名`] || hash[`氏名`].includes('?')) {
+    const num = (++unknownUserIndex + '').padStart(4, '0'); // like 0001
     if (hash[`氏名`]) {
       hash[`ヒント`] = `#名前が分からない人 ヒント: ${hash[`氏名`]}`;
     }
