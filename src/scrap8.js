@@ -2,9 +2,10 @@
 import fs from 'fs';
 import program from 'commander';
 import main from './main';
+import packageJson from '../package.json';
 
 program
-  .version('0.0.1')
+  .version(packageJson.version)
   .usage('[options] <file ...>')
   .option(
     '-t, --template',
